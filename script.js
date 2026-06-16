@@ -408,4 +408,37 @@ document.addEventListener('DOMContentLoaded', () => {
       backToTopBtn.style.pointerEvents = 'none';
     }
   });
+
+  /* ==========================================================================
+     MOUSE TRACKING INTERACTION
+     ========================================================================== */
+  const cursorGlow = document.getElementById('cursor-glow');
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  if (cursorGlow && !isTouchDevice) {
+    document.addEventListener('mousemove', (e) => {
+      cursorGlow.style.opacity = '1';
+      requestAnimationFrame(() => {
+        cursorGlow.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
+      });
+    });
+
+    document.addEventListener('mouseleave', () => {
+      cursorGlow.style.opacity = '0';
+    });
+  }
+
+  // Spotlight card effects
+  const cards = document.querySelectorAll('.card, .contact-card');
+  if (cards.length > 0 && !isTouchDevice) {
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  }
 });

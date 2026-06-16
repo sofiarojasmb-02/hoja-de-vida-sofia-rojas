@@ -219,6 +219,8 @@ button, input, textarea {
 
 /* Card - Premium Glassmorphic container */
 .card {
+  position: relative;
+  overflow: hidden;
   background-color: var(--bg-secondary);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
@@ -230,6 +232,29 @@ button, input, textarea {
               border-color var(--transition-normal), 
               box-shadow var(--transition-normal),
               background-color var(--transition-normal);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(350px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px), rgba(139, 92, 246, 0.08), transparent 85%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  border-radius: inherit;
+}
+
+[data-theme="light"] .card::before {
+  background: radial-gradient(350px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px), rgba(139, 92, 246, 0.04), transparent 85%);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card:hover {
@@ -338,6 +363,26 @@ button, input, textarea {
 [data-theme="light"] .bg-orb {
   mix-blend-mode: multiply;
   opacity: 0.45;
+}
+
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.14) 0%, transparent 70%);
+  border-radius: var(--border-radius-full);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  will-change: transform;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+[data-theme="light"] .cursor-glow {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
 }
 
 .orb-1 {
@@ -747,6 +792,8 @@ button, input, textarea {
 }
 
 .contact-card {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -759,9 +806,39 @@ button, input, textarea {
   transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(200px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px), rgba(139, 92, 246, 0.08), transparent 85%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  border-radius: inherit;
+}
+
+[data-theme="light"] .contact-card::before {
+  background: radial-gradient(200px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px), rgba(139, 92, 246, 0.04), transparent 85%);
+}
+
+.contact-card.interactive:hover::before {
+  opacity: 1;
+}
+
 .contact-card i {
   color: var(--accent-primary);
   flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-card div {
+  position: relative;
+  z-index: 2;
 }
 
 .contact-card.interactive:hover {
