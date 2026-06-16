@@ -315,20 +315,44 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.innerHTML = `<span>Enviando...</span> <i data-lucide="loader-2" class="animate-spin"></i>`;
       lucide.createIcons();
 
-      // Simulate network request
-      setTimeout(() => {
+      // Send the request via FormSubmit AJAX endpoint
+      fetch("https://formsubmit.co/ajax/sofiarojasmb@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          Nombre: nameInput.value.trim(),
+          Email: emailInput.value.trim(),
+          Mensaje: messageInput.value.trim(),
+          _subject: "Nuevo contacto desde tu Hoja de Vida Interactiva",
+          _captcha: "false"
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
         // Reset button state
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
         lucide.createIcons();
 
-        // Show Success Message panel
-        successMessage.classList.add('active');
-        
-        // Trigger Canvas Confetti celebration!
-        triggerConfetti();
-
-      }, 1500);
+        if (data.success === "true" || data.success === true) {
+          // Show Success Message panel
+          successMessage.classList.add('active');
+          // Trigger Canvas Confetti celebration!
+          triggerConfetti();
+        } else {
+          alert("Hubo un error al enviar el mensaje. Por favor intenta de nuevo.");
+        }
+      })
+      .catch(error => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+        lucide.createIcons();
+        console.error('Error:', error);
+        alert("Hubo un problema de conexión. Por favor intenta de nuevo.");
+      });
     }
   });
 
