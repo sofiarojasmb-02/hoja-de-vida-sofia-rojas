@@ -410,29 +410,111 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     MOUSE TRACKING INTERACTION (Pointer Events support for hybrid/touch screen laptops)
+     MOUSE TRACKING INTERACTION & PARTICLES (Pointer Events with Lerp Inertia)
      ========================================================================== */
   const cursorGlow = document.getElementById('cursor-glow');
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  let isGlowActive = false;
+  let isMoving = false;
+  let lastSpawnTime = 0;
+
+  function updateGlowPosition() {
+    if (!isMoving) return;
+
+    // Linear interpolation: current = current + (target - current) * ease
+    const ease = 0.08;
+    currentX += (targetX - currentX) * ease;
+    currentY += (targetY - currentY) * ease;
+
+    if (cursorGlow) {
+      cursorGlow.style.transform = `translate(calc(${currentX}px - 50%), calc(${currentY}px - 50%))`;
+    }
+
+    const dist = Math.hypot(targetX - currentX, targetY - currentY);
+    // Keep animating if we are still far enough from target and cursor is inside window
+    if (dist > 0.1 && isGlowActive) {
+      requestAnimationFrame(updateGlowPosition);
+    } else {
+      isMoving = false;
+    }
+  }
+
+  function createParticle(x, y) {
+    const particle = document.createElement('span');
+    particle.className = 'mouse-particle';
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
+
+    // Random direction and distance
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 20 + Math.random() * 40;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance;
+
+    particle.style.setProperty('--dx', `${dx}px`);
+    particle.style.setProperty('--dy', `${dy}px`);
+
+    // Random size
+    const size = 4 + Math.random() * 6;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+
+    // Premium purple/blue colors
+    const colors = ['#8b5cf6', '#6366f1', '#a78bfa', '#c084fc', '#3b82f6'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.backgroundColor = randomColor;
+    particle.style.boxShadow = `0 0 10px ${randomColor}`;
+
+    document.body.appendChild(particle);
+
+    particle.addEventListener('animationend', () => {
+      particle.remove();
+    });
+  }
 
   if (cursorGlow) {
     document.addEventListener('pointermove', (e) => {
-      // Only show the cursor glow when using a mouse pointer (not touch)
       if (e.pointerType === 'mouse') {
-        cursorGlow.style.opacity = '1';
-        requestAnimationFrame(() => {
-          cursorGlow.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
-        });
+        if (!isGlowActive) {
+          cursorGlow.style.opacity = '1';
+          isGlowActive = true;
+        }
+
+        targetX = e.clientX;
+        targetY = e.clientY;
+
+        if (!isMoving) {
+          currentX = targetX;
+          currentY = targetY;
+          isMoving = true;
+          updateGlowPosition();
+        }
+
+        // Spawn a particle at most once every 30ms to prevent performance lag
+        const now = Date.now();
+        if (now - lastSpawnTime > 30) {
+          createParticle(e.clientX, e.clientY);
+          lastSpawnTime = now;
+        }
       } else {
         cursorGlow.style.opacity = '0';
+        isGlowActive = false;
       }
     });
 
     document.addEventListener('pointerleave', () => {
       cursorGlow.style.opacity = '0';
+      isGlowActive = false;
+      isMoving = false;
     });
 
     document.addEventListener('mouseleave', () => {
       cursorGlow.style.opacity = '0';
+      isGlowActive = false;
+      isMoving = false;
     });
   }
 
