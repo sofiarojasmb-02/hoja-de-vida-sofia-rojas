@@ -450,23 +450,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Random direction and distance
     const angle = Math.random() * Math.PI * 2;
-    const distance = 20 + Math.random() * 40;
+    const distance = 15 + Math.random() * 45;
     const dx = Math.cos(angle) * distance;
     const dy = Math.sin(angle) * distance;
 
     particle.style.setProperty('--dx', `${dx}px`);
     particle.style.setProperty('--dy', `${dy}px`);
 
-    // Random size
-    const size = 4 + Math.random() * 6;
+    // Random size (increased for more intensity)
+    const size = 6 + Math.random() * 8;
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
 
     // Premium purple/blue colors
-    const colors = ['#8b5cf6', '#6366f1', '#a78bfa', '#c084fc', '#3b82f6'];
+    const colors = ['#8b5cf6', '#6366f1', '#a78bfa', '#c084fc', '#3b82f6', '#f472b6'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     particle.style.backgroundColor = randomColor;
-    particle.style.boxShadow = `0 0 10px ${randomColor}`;
+    particle.style.boxShadow = `0 0 14px 3px ${randomColor}`;
 
     document.body.appendChild(particle);
 
@@ -493,9 +493,10 @@ document.addEventListener('DOMContentLoaded', () => {
           updateGlowPosition();
         }
 
-        // Spawn a particle at most once every 30ms to prevent performance lag
+        // Spawn two particles at a time every 25ms for a denser, more intense halo trail
         const now = Date.now();
-        if (now - lastSpawnTime > 30) {
+        if (now - lastSpawnTime > 25) {
+          createParticle(e.clientX, e.clientY);
           createParticle(e.clientX, e.clientY);
           lastSpawnTime = now;
         }
