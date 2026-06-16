@@ -458,15 +458,15 @@ document.addEventListener('DOMContentLoaded', () => {
     particle.style.setProperty('--dy', `${dy}px`);
 
     // Random size (increased for more intensity)
-    const size = 6 + Math.random() * 8;
+    const size = 8 + Math.random() * 10;
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
 
-    // Premium purple/blue colors
-    const colors = ['#8b5cf6', '#6366f1', '#a78bfa', '#c084fc', '#3b82f6', '#f472b6'];
+    // Extremely striking neon and metallic colors: gold, cyan, hot pink, white, magenta
+    const colors = ['#ffd700', '#00f5ff', '#ff007f', '#ffffff', '#ff00ff', '#eab308'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     particle.style.backgroundColor = randomColor;
-    particle.style.boxShadow = `0 0 14px 3px ${randomColor}`;
+    particle.style.boxShadow = `0 0 16px 4px ${randomColor}`;
 
     document.body.appendChild(particle);
 
@@ -493,9 +493,10 @@ document.addEventListener('DOMContentLoaded', () => {
           updateGlowPosition();
         }
 
-        // Spawn two particles at a time every 25ms for a denser, more intense halo trail
+        // Spawn three particles at a time every 25ms for an extremely striking twinkling star trail
         const now = Date.now();
         if (now - lastSpawnTime > 25) {
+          createParticle(e.clientX, e.clientY);
           createParticle(e.clientX, e.clientY);
           createParticle(e.clientX, e.clientY);
           lastSpawnTime = now;
