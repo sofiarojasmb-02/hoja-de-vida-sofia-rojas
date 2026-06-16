@@ -410,17 +410,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     MOUSE TRACKING INTERACTION
+     MOUSE TRACKING INTERACTION (Pointer Events support for hybrid/touch screen laptops)
      ========================================================================== */
   const cursorGlow = document.getElementById('cursor-glow');
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-  if (cursorGlow && !isTouchDevice) {
-    document.addEventListener('mousemove', (e) => {
-      cursorGlow.style.opacity = '1';
-      requestAnimationFrame(() => {
-        cursorGlow.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
-      });
+  if (cursorGlow) {
+    document.addEventListener('pointermove', (e) => {
+      // Only show the cursor glow when using a mouse pointer (not touch)
+      if (e.pointerType === 'mouse') {
+        cursorGlow.style.opacity = '1';
+        requestAnimationFrame(() => {
+          cursorGlow.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
+        });
+      } else {
+        cursorGlow.style.opacity = '0';
+      }
+    });
+
+    document.addEventListener('pointerleave', () => {
+      cursorGlow.style.opacity = '0';
     });
 
     document.addEventListener('mouseleave', () => {
@@ -430,14 +438,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Spotlight card effects
   const cards = document.querySelectorAll('.card, .contact-card');
-  if (cards.length > 0 && !isTouchDevice) {
+  if (cards.length > 0) {
     cards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
+      card.addEventListener('pointermove', (e) => {
+        if (e.pointerType === 'mouse') {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        }
       });
     });
   }
