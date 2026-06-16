@@ -43,6 +43,7 @@
   --orb-2-color: rgba(20, 184, 166, 0.2);
   --orb-3-color: rgba(59, 130, 246, 0.15);
   --side-gradient-color: rgba(139, 92, 246, 0.15);
+  --bg-gradient: radial-gradient(circle at 50% 0%, #180d2d 0%, #0e091b 50%, #090d16 100%);
 }
 
 /* Light Theme Overrides */
@@ -73,6 +74,7 @@
   --orb-2-color: rgba(13, 148, 136, 0.08);
   --orb-3-color: rgba(37, 99, 235, 0.06);
   --side-gradient-color: rgba(139, 92, 246, 0.05);
+  --bg-gradient: radial-gradient(circle at 50% 0%, #f4efff 0%, #faf8ff 50%, #f8fafc 100%);
 }
 
 /* ==========================================================================
@@ -93,11 +95,12 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-primary);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
   color: var(--text-primary);
   overflow-x: hidden;
   line-height: 1.6;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  transition: background var(--transition-normal), color var(--transition-normal);
   -webkit-font-smoothing: antialiased;
 }
 
