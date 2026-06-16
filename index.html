@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sofía Rojas Montoya - Portafolio e Inovación</title>
+  <meta name="description" content="Hoja de vida interactiva de Sofía Rojas Montoya. Ingeniera Física y Especialista en Gestión de la Innovación. Liderazgo de proyectos STEAM, IA, IoT y transformación digital.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Canvas Confetti (CDN for Contact Form success) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Animated Background Orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">SR</span>
+        <span class="logo-dot">.</span>
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">Perfil</a>
+        <a href="#experience" class="nav-link">Experiencia</a>
+        <a href="#skills" class="nav-link">Habilidades</a>
+        <a href="#education" class="nav-link">Formación</a>
+        <a href="#references" class="nav-link">Referencias</a>
+        <a href="#contact" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema de color">
+          <i data-lucide="sun" class="icon-sun"></i>
+          <i data-lucide="moon" class="icon-moon"></i>
+        </button>
+        <!-- Download CV -->
+        <a href="CV_SofiaRojasM.pdf" download class="btn btn-primary btn-sm btn-download">
+          <i data-lucide="download"></i>
+          <span>Descargar CV</span>
+        </a>
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="btn-icon btn-menu-toggle" aria-label="Menu de navegación">
+          <i data-lucide="menu" class="icon-menu"></i>
+          <i data-lucide="x" class="icon-close"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-status animate-fade-in">
+            <span class="pulse-dot"></span>
+            <span>Disponible para Proyectos de Innovación</span>
+          </div>
+          
+          <h1 class="hero-title animate-title">
+            SOFÍA ROJAS<br><span class="highlight-text">MONTOYA</span>
+          </h1>
+          
+          <h2 class="hero-subtitle animate-subtitle">
+            <span class="typewriter-text" id="typewriter">Ingeniera Física & Especialista en Gestión de la Innovación</span>
+          </h2>
+          
+          <p class="hero-description animate-fade-in-delayed">
+            Liderazgo de proyectos tecnológicos con impacto social, diseño de experiencias de aprendizaje STEAM y desarrollo de soluciones de software y hardware con tecnologías de la Cuarta Revolución Industrial.
+          </p>
+
+          <div class="hero-actions animate-fade-in-delayed">
+            <a href="#experience" class="btn btn-primary">
+              Ver Experiencia
+              <i data-lucide="arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-outline">Contáctame</a>
+          </div>
+        </div>
+
+        <!-- Hero Image Container (Interactive Hover Photo) -->
+        <div class="hero-image-container animate-fade-in-delayed">
+          <div class="hero-image-wrapper">
+            <img src="Foto2 HV.jpeg" alt="Sofía Rojas Montoya B&W" class="hero-img hero-img-bw">
+            <img src="Foto HV.jpeg" alt="Sofía Rojas Montoya Color" class="hero-img hero-img-color">
+          </div>
+          <div class="hero-img-badge">
+            <i data-lucide="sparkles"></i>
+            <span>STEAM Leader</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Grid Quick Links -->
+      <div class="container">
+        <div class="hero-contacts animate-fade-in-delayed">
+          <div class="contact-card">
+            <i data-lucide="map-pin"></i>
+            <div>
+              <span class="contact-label">Ubicación</span>
+              <span class="contact-value">Manizales, Colombia</span>
+            </div>
+          </div>
+          
+          <a href="mailto:sofiarojasmb@gmail.com" class="contact-card interactive">
+            <i data-lucide="mail"></i>
+            <div>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">sofiarojasmb@gmail.com</span>
+            </div>
+          </a>
+          
+          <a href="tel:+573206787561" class="contact-card interactive">
+            <i data-lucide="phone"></i>
+            <div>
+              <span class="contact-label">Teléfono</span>
+              <span class="contact-value">+57 320 678 7561</span>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/sof%C3%ADa-rojas-montoya-baa5b3237" target="_blank" rel="noopener noreferrer" class="contact-card interactive">
+            <i data-lucide="linkedin"></i>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">sofía-rojas-montoya-baa5b3237</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-scroll-indicator">
+        <a href="#about" aria-label="Desplazar hacia abajo">
+          <span class="mouse-icon">
+            <span class="wheel"></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- About / Summary Section -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-pretitle">Perfil</span>
+          <h2 class="section-title">Resumen Profesional</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-card card reveal">
+            <h3>¿Quién soy?</h3>
+            <p>
+              Soy Ingeniera Física y Especialista en Gestión de la Innovación, apasionada por la dirección de proyectos de transformación digital, innovación educativa y apropiación tecnológica. He liderado equipos multidisciplinarios y estrategias de implementación de <strong>Ecosistemas STEAM</strong>, inteligencia artificial, IoT, realidad extendida y fabricación digital.
+            </p>
+            <p>
+              Mi enfoque integra la viabilidad técnica con el desarrollo del potencial humano, gestionando recursos y liderando procesos de capacitación y transferencia tecnológica para transformar el tejido social y empresarial.
+            </p>
+          </div>
+
+          <div class="about-pillars">
+            <div class="pillar-card card reveal">
+              <div class="pillar-icon-wrapper">
+                <i data-lucide="rocket"></i>
+              </div>
+              <div class="pillar-info">
+                <h4>Transformación Digital</h4>
+                <p>Lidero procesos de apropiación e integración de tecnologías de punta para la optimización de procesos.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card card reveal">
+              <div class="pillar-icon-wrapper">
+                <i data-lucide="graduation-cap"></i>
+              </div>
+              <div class="pillar-info">
+                <h4>Ecosistemas STEAM</h4>
+                <p>Diseño y ejecución de programas educativos interactivos centrados en ciencia, tecnología y arte.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card card reveal">
+              <div class="pillar-icon-wrapper">
+                <i data-lucide="cpu"></i>
+              </div>
+              <div class="pillar-info">
+                <h4>Tecnologías Emergentes</h4>
+                <p>Experiencia práctica en Inteligencia Artificial, Internet de las Cosas (IoT), Impresión 3D y VR/AR.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card card reveal">
+              <div class="pillar-icon-wrapper">
+                <i data-lucide="users"></i>
+              </div>
+              <div class="pillar-info">
+                <h4>Liderazgo Técnico</h4>
+                <p>Dirección y mentoría de equipos multidisciplinarios de ingenieros, diseñadores y docentes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-pretitle">Trayectoria</span>
+          <h2 class="section-title">Experiencia Profesional</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- Timeline Filters -->
+        <div class="timeline-filters reveal">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="liderazgo">Liderazgo y Gestión</button>
+          <button class="filter-btn" data-filter="consultoria">Consultoría y 3D</button>
+          <button class="filter-btn" data-filter="docencia">Docencia y Academia</button>
+        </div>
+
+        <!-- Vertical Timeline -->
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item reveal" data-category="liderazgo">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">01/2026 - Presente</div>
+            <div class="timeline-card card">
+              <div class="timeline-card-header">
+                <div>
+                  <h3 class="role-title">Líder de Proyecto | Aulas STEAM</h3>
+                  <h4 class="company-name">UNIVERSIDAD NACIONAL DE COLOMBIA - Manizales</h4>
+                </div>
+                <span class="location-badge">Manizales, Caldas</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Coordinación integral y puesta en marcha del proyecto Aulas STEAM en instituciones educativas públicas de Manizales, supervisando el cumplimiento de hitos operativos y técnicos.</li>
+                  <li>Liderazgo y seguimiento de un equipo multidisciplinario de profesionales en territorio para asegurar la excelencia en la ejecución del proyecto.</li>
+                  <li>Implementación de metodologías ágiles para el acompañamiento en el desarrollo de proyectos escolares.</li>
+                  <li>Liderazgo de la estrategia de adopción de Inteligencia Artificial para la optimización de procesos pedagógicos.</li>
+                  <li>Capacitación continua a más de 20 docentes mensuales en tecnologías críticas: Impresión 3D, Machine Learning, IA aplicada, Modelado 3D y energías renovables.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item reveal" data-category="liderazgo">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">03/2025 - 10/2025</div>
+            <div class="timeline-card card">
+              <div class="timeline-card-header">
+                <div>
+                  <h3 class="role-title">Líder de Formación y Operaciones | Proyecto MinCiencias</h3>
+                  <h4 class="company-name">UNIVERSIDAD NACIONAL DE COLOMBIA - Tumaco</h4>
+                </div>
+                <span class="location-badge">Tumaco, Nariño</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Asesoría a docentes en el diseño y desarrollo de proyectos STEAM, desde la identificación de problemáticas hasta la creación de prototipos funcionales.</li>
+                  <li>Implementación de metodologías activas (ABP, Neurodidáctica y Design Thinking) en 29 laboratorios de 15 municipios, fortaleciendo la transformación digital comunitaria.</li>
+                  <li>Integración de tecnologías emergentes (Robótica, IA, IoT y Modelado 3D) en procesos de formación escolar y docente.</li>
+                  <li>Desarrollo de recursos pedagógicos especializados y acompañamiento técnico en herramientas de la Cuarta Revolución Industrial.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item reveal" data-category="consultoria">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">08/2022 - 02/2025</div>
+            <div class="timeline-card card">
+              <div class="timeline-card-header">
+                <div>
+                  <h3 class="role-title">Consultora en Innovación Tecnológica | FabLab UNAL</h3>
+                  <h4 class="company-name">UNIVERSIDAD NACIONAL DE COLOMBIA - Manizales</h4>
+                </div>
+                <span class="location-badge">Manizales, Caldas</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Apoyo en la constitución técnica del FabLab, estandarizando procesos de capacitación en transformación digital para estudiantes, docentes y sector empresarial.</li>
+                  <li>Asesoría a empresas regionales para la solución de problemáticas corporativas mediante la incorporación de tecnologías digitales y mejora operativa.</li>
+                  <li>Diseño y optimización de activos digitales para entornos virtuales (VR/AR, videojuegos e impresión 3D) utilizando modelado 3D de alta precisión.</li>
+                  <li>Gestión de alianzas estratégicas y formulación de soluciones innovadoras y tecnológicas alineadas con las demandas industriales de la región.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item reveal" data-category="liderazgo">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">05/2024 - 10/2024</div>
+            <div class="timeline-card card">
+              <div class="timeline-card-header">
+                <div>
+                  <h3 class="role-title">Project Manager de Innovación Educativa y Tecnológica</h3>
+                  <h4 class="company-name">UNIVERSIDAD NACIONAL DE COLOMBIA - Bogotá</h4>
+                </div>
+                <span class="location-badge">Bogotá D.C.</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Responsable del montaje e implementación técnica del Clúster STEAM en tres sedes de la Universidad Nacional, fortaleciendo la infraestructura tecnológica y educativa de la institución.</li>
+                  <li>Liderazgo en procesos de gestión del conocimiento, capacitación en metodologías STEAM y desarrollo de proyectos tecnológicos para más de 1,500 personas.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="timeline-item reveal" data-category="docencia">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">05/2023 - 12/2023</div>
+            <div class="timeline-card card">
+              <div class="timeline-card-header">
+                <div>
+                  <h3 class="role-title">Docente Especialista | Programa "Todos a la U"</h3>
+                  <h4 class="company-name">ATENEA Y UNIVERSIDAD NACIONAL DE COLOMBIA - Bogotá</h4>
+                </div>
+                <span class="location-badge">Bogotá (Virtual)</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Liderazgo de procesos formativos sincrónicos para grupos de hasta 50 estudiantes, ejecutando estrategias de seguimiento personalizado y retroalimentación técnica de alta calidad.</li>
+                  <li>Diseño instruccional: Estructuración de rutas de aprendizaje en Animación Digital (niveles básico a avanzado) y desarrollo de retos técnicos para entornos virtuales masivos.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="timeline-item reveal" data-category="docencia">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">01/2021 - 12/2022</div>
+            <div class="timeline-card card">
+              <div class="timeline-card-header">
+                <div>
+                  <h3 class="role-title">Asistente de Desarrollo e Innovación | Aula STEM</h3>
+                  <h4 class="company-name">UNIVERSIDAD NACIONAL DE COLOMBIA - Manizales</h4>
+                </div>
+                <span class="location-badge">Manizales, Caldas</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Participación activa en el diseño y desarrollo de proyectos de innovación tecnológica para la estructuración de soluciones educativas basadas en tecnologías emergentes.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="timeline-item reveal" data-category="docencia">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">01/2020 - 12/2020</div>
+            <div class="timeline-card card">
+              <div class="timeline-card-header">
+                <div>
+                  <h3 class="role-title">Asistente de Investigación</h3>
+                  <h4 class="company-name">GRUPO DE INVESTIGACIÓN EN INSTRUMENTACIÓN FÍSICA</h4>
+                </div>
+                <span class="location-badge">Manizales, Caldas</span>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Diseño 3D e ingeniería de detalle de un prototipo de robot de desinfección UV para COVID-19, proyecto que culminó con éxito en la radicación de una solicitud de patente.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-pretitle">Experticia</span>
+          <h2 class="section-title">Habilidades y Competencias</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Hard Skills (Tecnologías) -->
+          <div class="skills-category card reveal">
+            <h3><i data-lucide="cpu" class="cat-icon"></i> Tecnologías Críticas</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Inteligencia Artificial Aplicada</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="90%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Modelado y Fabricación Digital (3D / CNC)</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="95%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Internet de las Cosas (IoT) y Robótica</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="85%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Realidad Extendida (VR/AR)</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Innovation & Management Skills -->
+          <div class="skills-category card reveal">
+            <h3><i data-lucide="lightbulb" class="cat-icon"></i> Gestión e Innovación</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Gestión de Proyectos de Innovación</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="95%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Metodologías Ágiles (Scrum, Design Thinking)</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="90%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Gestión del Conocimiento</span>
+                  <span>88%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="88%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Diseño Instruccional y Pedagogía STEAM</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="90%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional / Interpersonal Skills -->
+          <div class="skills-category card reveal">
+            <h3><i data-lucide="users" class="cat-icon"></i> Habilidades Blandas</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Liderazgo de Equipos Interdisciplinarios</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="95%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Resolución de Problemas Creativos</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="95%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Comunicación Efectiva y Asertiva</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="90%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Inglés Intermedio (Nivel B1)</span>
+                  <span>75%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 0%" data-progress="75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini Tags for quick visual interest -->
+        <div class="skills-tags reveal">
+          <span class="tag">AI Applied</span>
+          <span class="tag">Design Thinking</span>
+          <span class="tag">3D Printing</span>
+          <span class="tag">ABP (Aprendizaje Basado en Proyectos)</span>
+          <span class="tag">IoT</span>
+          <span class="tag">Virtual Reality</span>
+          <span class="tag">Scrum</span>
+          <span class="tag">CNC Machining</span>
+          <span class="tag">Neurodidáctica</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-pretitle">Estudios</span>
+          <h2 class="section-title">Formación Académica</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="education-grid">
+          <!-- Card 1 -->
+          <div class="education-card card reveal">
+            <div class="edu-icon-wrapper">
+              <i data-lucide="award"></i>
+            </div>
+            <span class="edu-date">2024</span>
+            <h3>Especialización en Gestión de la Innovación</h3>
+            <h4>Universidad de Manizales</h4>
+            <p class="edu-description">Enfoque en estructuración de proyectos innovadores, diseño de estrategias operativas y articulación de tecnología para la mejora de competitividad en organizaciones.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="education-card card reveal">
+            <div class="edu-icon-wrapper">
+              <i data-lucide="book-open"></i>
+            </div>
+            <span class="edu-date">2018 - 2022</span>
+            <h3>Pregrado en Ingeniería Física</h3>
+            <h4>Universidad Nacional de Colombia</h4>
+            <p class="edu-description">Estudio de física aplicada, instrumentación, tecnologías de fabricación 3D y desarrollo de hardware/software técnico. Participación activa en grupos de investigación con impacto patentable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="references" class="references-section section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-pretitle">Contactos</span>
+          <h2 class="section-title">Referencias Profesionales</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="references-grid">
+          <!-- Ref 1 -->
+          <div class="reference-card card reveal">
+            <div class="ref-avatar">JV</div>
+            <h3>Juan David Villegas Tamayo</h3>
+            <span class="ref-relation">Ingeniero Electrónico</span>
+            <div class="ref-contact-info">
+              <button class="btn btn-text btn-copy" data-copy="jdvillegast@unal.edu.co" aria-label="Copiar correo de Juan David">
+                <i data-lucide="mail"></i>
+                <span>jdvillegast@unal.edu.co</span>
+              </button>
+              <button class="btn btn-text btn-copy" data-copy="3117439729" aria-label="Copiar teléfono de Juan David">
+                <i data-lucide="phone"></i>
+                <span>3117439729</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Ref 2 -->
+          <div class="reference-card card reveal">
+            <div class="ref-avatar">DV</div>
+            <h3>Daniel Vick</h3>
+            <span class="ref-relation">Coordinador Aula STEM UNAL</span>
+            <div class="ref-contact-info">
+              <button class="btn btn-text btn-copy" data-copy="daniel.vick87@gmail.com" aria-label="Copiar correo de Daniel Vick">
+                <i data-lucide="mail"></i>
+                <span>daniel.vick87@gmail.com</span>
+              </button>
+              <button class="btn btn-text btn-copy" data-copy="3106032635" aria-label="Copiar teléfono de Daniel Vick">
+                <i data-lucide="phone"></i>
+                <span>3106032635</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-pretitle">Conexión</span>
+          <h2 class="section-title">¡Hablemos!</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info-column reveal">
+            <h3>¿Tienes un proyecto en mente?</h3>
+            <p>Estoy interesada en liderar iniciativas de innovación, desarrollo tecnológico, creación de laboratorios STEAM o integración de inteligencia artificial.</p>
+            
+            <div class="social-links">
+              <a href="mailto:sofiarojasmb@gmail.com" class="social-btn" aria-label="Email de Sofía"><i data-lucide="mail"></i></a>
+              <a href="tel:+573206787561" class="social-btn" aria-label="Teléfono de Sofía"><i data-lucide="phone"></i></a>
+              <a href="https://www.linkedin.com/in/sof%C3%ADa-rojas-montoya-baa5b3237" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn de Sofía"><i data-lucide="linkedin"></i></a>
+            </div>
+
+            <!-- Fun interactive fact -->
+            <div class="fun-fact card">
+              <div class="fact-icon"><i data-lucide="sparkles"></i></div>
+              <p><strong>Dato curioso:</strong> Cofundadora técnica del FabLab de la UNAL Sede Manizales y co-diseñadora de un robot de desinfección UV patentable para el COVID-19.</p>
+            </div>
+          </div>
+
+          <div class="contact-form-column card reveal">
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="form-name">Nombre Completo</label>
+                <input type="text" id="form-name" required placeholder="Ingresa tu nombre">
+                <span class="error-msg">Por favor ingresa tu nombre</span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email">Correo Electrónico</label>
+                <input type="email" id="form-email" required placeholder="ejemplo@correo.com">
+                <span class="error-msg">Por favor ingresa un correo electrónico válido</span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Mensaje</label>
+                <textarea id="form-message" required rows="5" placeholder="¿Cómo podemos colaborar?"></textarea>
+                <span class="error-msg">Por favor escribe un mensaje</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                <span>Enviar Mensaje</span>
+                <i data-lucide="send"></i>
+              </button>
+            </form>
+
+            <div class="success-message" id="success-message">
+              <div class="success-icon">
+                <i data-lucide="check-circle-2"></i>
+              </div>
+              <h3>¡Mensaje Enviado con Éxito!</h3>
+              <p>Gracias por ponerte en contacto. Responderé a tu correo lo antes posible para que empecemos a colaborar.</p>
+              <button class="btn btn-outline btn-sm" id="btn-reset-form">Enviar otro mensaje</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 Sofía Rojas Montoya. Todos los derechos reservados.</p>
+      <p class="footer-tagline">Ingeniería Física + Innovación con Propósito</p>
+      <a href="#" class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+        <i data-lucide="chevron-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
