@@ -42,6 +42,7 @@
   --orb-1-color: rgba(99, 102, 241, 0.25);
   --orb-2-color: rgba(20, 184, 166, 0.2);
   --orb-3-color: rgba(59, 130, 246, 0.15);
+  --side-gradient-color: rgba(139, 92, 246, 0.15);
 }
 
 /* Light Theme Overrides */
@@ -71,6 +72,7 @@
   --orb-1-color: rgba(79, 70, 229, 0.1);
   --orb-2-color: rgba(13, 148, 136, 0.08);
   --orb-3-color: rgba(37, 99, 235, 0.06);
+  --side-gradient-color: rgba(139, 92, 246, 0.05);
 }
 
 /* ==========================================================================
@@ -97,6 +99,32 @@ body {
   line-height: 1.6;
   transition: background-color var(--transition-normal), color var(--transition-normal);
   -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15vw;
+  height: 100vh;
+  background: linear-gradient(to right, var(--side-gradient-color), transparent);
+  pointer-events: none;
+  z-index: -2;
+  transition: background var(--transition-normal);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 15vw;
+  height: 100vh;
+  background: linear-gradient(to left, var(--side-gradient-color), transparent);
+  pointer-events: none;
+  z-index: -2;
+  transition: background var(--transition-normal);
 }
 
 /* Custom Scrollbar */
