@@ -343,7 +343,11 @@ document.addEventListener('DOMContentLoaded', () => {
           // Trigger Canvas Confetti celebration!
           triggerConfetti();
         } else {
-          alert("Hubo un error al enviar el mensaje. Por favor intenta de nuevo.");
+          if (data.message && (data.message.toLowerCase().includes('activate') || data.message.toLowerCase().includes('confirm'))) {
+            alert("¡Casi listo! FormSubmit necesita verificar tu correo. Por favor, revisa tu bandeja de entrada o carpeta de SPAM en sofiarojasmb@gmail.com y haz clic en el enlace de activación que te enviaron.");
+          } else {
+            alert("Hubo un error al enviar el mensaje: " + (data.message || "Por favor intenta de nuevo."));
+          }
         }
       })
       .catch(error => {
