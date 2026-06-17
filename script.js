@@ -462,8 +462,8 @@ document.addEventListener('DOMContentLoaded', () => {
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
 
-    // Extremely striking neon and metallic colors: gold, cyan, hot pink, white, magenta
-    const colors = ['#ffd700', '#00f5ff', '#ff007f', '#ffffff', '#ff00ff', '#eab308'];
+    // Dynamic theme-aware colors: neon pink, gold, and cyan on dark theme; deep pink, amber, and cyan on light theme
+    const colors = ['var(--particle-color-1)', 'var(--particle-color-2)', 'var(--particle-color-3)'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     particle.style.backgroundColor = randomColor;
     particle.style.boxShadow = `0 0 16px 4px ${randomColor}`;

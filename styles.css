@@ -44,6 +44,11 @@
   --orb-3-color: rgba(59, 130, 246, 0.15);
   --side-gradient-color: rgba(139, 92, 246, 0.15);
   --bg-gradient: radial-gradient(circle at 50% 0%, #180d2d 0%, #0e091b 50%, #090d16 100%);
+  
+  /* Particle Sparkle Colors (Dark Theme - Glowing Neon) */
+  --particle-color-1: #ff007f; /* Neon Pink */
+  --particle-color-2: #ffd700; /* Neon Gold */
+  --particle-color-3: #00f5ff; /* Neon Cyan */
 }
 
 /* Light Theme Overrides */
@@ -75,6 +80,11 @@
   --orb-3-color: rgba(37, 99, 235, 0.06);
   --side-gradient-color: rgba(139, 92, 246, 0.05);
   --bg-gradient: radial-gradient(circle at 50% 0%, #f4efff 0%, #faf8ff 50%, #f8fafc 100%);
+
+  /* Particle Sparkle Colors (Light Theme - Rich High Contrast) */
+  --particle-color-1: #db2777; /* Deep Pink */
+  --particle-color-2: #d97706; /* Deep Amber */
+  --particle-color-3: #0891b2; /* Deep Cyan */
 }
 
 /* ==========================================================================
